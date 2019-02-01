@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="magasin">
+            <h2><span>Magasin</span> {{magasin.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Code</span></dt>
+                <dd>
+                    <span>{{magasin.code}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{magasin.name}}</span>
+                </dd>
+                <dt><span>Status</span></dt>
+                <dd>
+                    <span>{{magasin.status}}</span>
+                </dd>
+                <dt><span>Departement</span></dt>
+                <dd>
+                    <div *ngIf="magasin.departement">
+                        <a [routerLink]="['/departement', magasin.departement?.id, 'view']">{{magasin.departement?.code}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/magasin', magasin.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
