@@ -1,0 +1,43 @@
+{
+    "name": "Magasin",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "MagasinStatus",
+            "fieldValues": "OPEN,CLOSED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "relationshipName": "departement",
+            "otherEntityName": "departement",
+            "otherEntityField": "code",
+            "otherEntityRelationshipName": "code"
+        }
+    ],
+    "changelogDate": "20190201122733",
+    "entityTableName": "magasin",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

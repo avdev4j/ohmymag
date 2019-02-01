@@ -1,0 +1,21 @@
+entity Magasin {
+ code String required
+ name String
+ status MagasinStatus required
+}
+
+entity Departement {
+ code String required
+ name String
+}
+
+enum MagasinStatus {
+ OPEN, CLOSED
+}
+
+relationship OneToMany {
+ Departement{code} to Magasin{Departement(code) required}
+}
+
+service Magasin, Departement with serviceClass
+paginate Magasin with pagination

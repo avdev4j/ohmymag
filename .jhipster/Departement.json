@@ -1,0 +1,33 @@
+{
+    "name": "Departement",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "code",
+            "otherEntityName": "magasin",
+            "otherEntityRelationshipName": "departement"
+        }
+    ],
+    "changelogDate": "20190201122734",
+    "entityTableName": "departement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
